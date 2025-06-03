@@ -1,1 +1,16 @@
-/*  your css code here. If applicable */
+#band {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#band li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#band li:last-child {
+    border-bottom: none;
+}
+
+
