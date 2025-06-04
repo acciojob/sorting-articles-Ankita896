@@ -1,10 +1,11 @@
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
-function strip(str) {
-    return str.replace(/^(a|an|the) /i, '');
-}
-
-const sortedBands = bands.sort((a, b) => strip(a).localeCompare(strip(b)));
+const sortedBands = bands.sort(function(a, b) {
+    const regex = /^(a |an |the )/i;
+    const strA = a.replace(regex, '');
+    const strB = b.replace(regex, '');
+    return strA.localeCompare(strB);
+});
 
 const bandList = document.getElementById('band');
 sortedBands.forEach((band) => {
